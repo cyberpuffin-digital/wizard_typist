@@ -1,0 +1,97 @@
+[gd_scene format=2]
+
+[node name="HUD" type="RichTextLabel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -25.5
+margin_right = 25.5
+margin_bottom = 40.0
+grow_horizontal = 2
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Score"]
+margin_top = 4.0
+margin_right = 51.0
+margin_bottom = 18.0
+text = "Score:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="Score"]
+margin_top = 22.0
+margin_right = 51.0
+margin_bottom = 36.0
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeathClock" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -103.0
+margin_bottom = 40.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="DeathClock"]
+margin_left = 28.0
+margin_top = 4.0
+margin_right = 103.0
+margin_bottom = 18.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Grim arrival"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="DeathClock"]
+margin_left = 95.0
+margin_top = 22.0
+margin_right = 103.0
+margin_bottom = 36.0
+size_flags_horizontal = 8
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Accuracy" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Accuracy"]
+margin_top = 4.0
+margin_right = 57.0
+margin_bottom = 18.0
+size_flags_horizontal = 4
+text = "Accuracy"
+
+[node name="Value" type="Label" parent="Accuracy"]
+margin_top = 22.0
+margin_right = 36.0
+margin_bottom = 36.0
+size_flags_horizontal = 0
+text = "100%"

@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Fonts/Old Englished Boots/button.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/Pause.gd" type="Script" id=2]
+
+[node name="PauseMenu" type="WindowDialog"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -100.0
+margin_right = 150.0
+margin_bottom = 100.0
+popup_exclusive = true
+window_title = "Paused"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main Menu" type="Button" parent="VBoxContainer"]
+margin_left = 78.0
+margin_top = 25.0
+margin_right = 222.0
+margin_bottom = 72.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.784314, 0.588235, 0, 1 )
+custom_colors/font_color_hover = Color( 0.521569, 0.517647, 0.513726, 1 )
+custom_colors/font_color_pressed = Color( 0.392157, 0.196078, 0, 1 )
+text = "Main Menu"
+flat = true
+
+[node name="Resume Game" type="Button" parent="VBoxContainer"]
+margin_left = 65.0
+margin_top = 76.0
+margin_right = 235.0
+margin_bottom = 123.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.784314, 0.588235, 0, 1 )
+custom_colors/font_color_hover = Color( 0.521569, 0.517647, 0.513726, 1 )
+custom_colors/font_color_pressed = Color( 0.392157, 0.196078, 0, 1 )
+text = "Resume Game"
+flat = true
+
+[node name="Quit Game" type="Button" parent="VBoxContainer"]
+margin_left = 82.0
+margin_top = 127.0
+margin_right = 217.0
+margin_bottom = 174.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.784314, 0.588235, 0, 1 )
+custom_colors/font_color_hover = Color( 0.521569, 0.517647, 0.513726, 1 )
+custom_colors/font_color_pressed = Color( 0.392157, 0.196078, 0, 1 )
+text = "Quit Game"
+flat = true

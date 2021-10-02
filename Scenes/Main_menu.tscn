@@ -1,0 +1,187 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fonts/Old Englished Boots/button.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/Old Englished Boots/condenced.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Fonts/Old Englished Boots/title.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scripts/Main_menu.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Config.tscn" type="PackedScene" id=5]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -244.337
+margin_top = -58.4695
+margin_right = 255.663
+margin_bottom = 291.531
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resolution" type="HBoxContainer" parent="Options/VBoxContainer"]
+margin_right = 223.0
+margin_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="Options/VBoxContainer/Resolution"]
+margin_top = 3.0
+margin_right = 119.0
+margin_bottom = 17.0
+text = "Display Resolution"
+
+[node name="ResValue" type="OptionButton" parent="Options/VBoxContainer/Resolution"]
+margin_left = 123.0
+margin_right = 223.0
+margin_bottom = 20.0
+text = "1024 x 600"
+items = [ "1024 x 600", null, false, 0, null, "960 x 540", null, false, 1, null, "1280 x 720", null, false, 2, null ]
+selected = 0
+
+[node name="Save" type="Button" parent="Options"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -32.5
+margin_top = -47.0
+margin_right = 32.5
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.784314, 0.588235, 0, 1 )
+custom_colors/font_color_hover = Color( 0.521569, 0.517647, 0.513726, 1 )
+custom_colors/font_color_pressed = Color( 0.392157, 0.196078, 0, 1 )
+text = "Save"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Display" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+margin_bottom = 300.0
+mouse_filter = 2
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Display"]
+margin_left = 295.0
+margin_top = 96.0
+margin_right = 728.0
+margin_bottom = 171.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0.588235, 0.784314, 1 )
+text = "Wizard typist"
+uppercase = true
+
+[node name="Author" type="Label" parent="Display"]
+margin_left = 439.0
+margin_top = 175.0
+margin_right = 584.0
+margin_bottom = 204.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0.588235, 0.784314, 1 )
+text = "By: Cyber Puffin"
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -301.5
+margin_bottom = -1.5
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Button" parent="Buttons"]
+margin_left = 438.0
+margin_top = 75.0
+margin_right = 585.0
+margin_bottom = 122.0
+focus_neighbour_top = NodePath("../Start")
+focus_neighbour_bottom = NodePath("../Exit")
+focus_next = NodePath("../Exit")
+focus_previous = NodePath("../Start")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.784314, 0.588235, 0, 1 )
+custom_colors/font_color_hover = Color( 0.521569, 0.517647, 0.513726, 1 )
+custom_colors/font_color_pressed = Color( 0.392157, 0.196078, 0, 1 )
+text = "Start Game"
+flat = true
+
+[node name="Options" type="Button" parent="Buttons"]
+margin_left = 463.0
+margin_top = 126.0
+margin_right = 561.0
+margin_bottom = 173.0
+focus_neighbour_top = NodePath("../Start")
+focus_neighbour_bottom = NodePath("../Exit")
+focus_next = NodePath("../Exit")
+focus_previous = NodePath("../Start")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.784314, 0.588235, 0, 1 )
+custom_colors/font_color_hover = Color( 0.521569, 0.517647, 0.513726, 1 )
+custom_colors/font_color_pressed = Color( 0.392157, 0.196078, 0, 1 )
+text = "Options"
+flat = true
+
+[node name="Exit" type="Button" parent="Buttons"]
+margin_left = 443.0
+margin_top = 177.0
+margin_right = 580.0
+margin_bottom = 224.0
+focus_neighbour_top = NodePath("../Options")
+focus_neighbour_bottom = NodePath("../Start")
+focus_next = NodePath("../Start")
+focus_previous = NodePath("../Options")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.784314, 0.588235, 0, 1 )
+custom_colors/font_color_hover = Color( 0.521569, 0.517647, 0.513726, 1 )
+custom_colors/font_color_pressed = Color( 0.392157, 0.196078, 0, 1 )
+text = "Exit Game"
+flat = true
+
+[node name="Config" parent="." instance=ExtResource( 5 )]

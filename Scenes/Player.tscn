@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Images/Player/Player.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Images/Objects/Wand/wand_animation.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://Fonts/Old Englished Boots/target.tres" type="DynamicFont" id=4]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 24.3083
+height = 81.0991
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.25, 2.25 )
+shape = SubResource( 1 )
+
+[node name="Avatar" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )
+animation = "walk"
+
+[node name="Wand" type="AnimatedSprite" parent="."]
+position = Vector2( 27, -5 )
+rotation = 0.785398
+scale = Vector2( 0.25, 0.25 )
+frames = ExtResource( 3 )
+frame = 3
+
+[node name="SpellInput" type="TextEdit" parent="."]
+margin_left = -60.0
+margin_top = 75.0
+margin_right = 60.0
+margin_bottom = 150.0
+hint_tooltip = "Abbra Kadabra"
+custom_fonts/font = ExtResource( 4 )
+text = "Lorem Ipscum"
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
