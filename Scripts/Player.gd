@@ -2,7 +2,12 @@ extends KinematicBody2D
 
 signal cast
 
+var spell_time : float
+var wand_stage : int
 var verbose : bool = false
+
+const SPELL_TIMER = 1.0
+const INPUT = preload("res://Scripts/Library/input.gd")
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
@@ -13,15 +18,34 @@ func _input(event):
 				$SpellInput.set_text(_text)
 			KEY_ENTER:
 				emit_signal("cast", $SpellInput.text)
+				spell_time = SPELL_TIMER
+				wand_stage = 4
 				$SpellInput.set_text("")
 			KEY_ESCAPE:
 				if verbose:
 					print("UI Cancel event handled by pause menu")
 			_:
-				$SpellInput.text += sanitize_input(event.get_scancode_with_modifiers())
+				$SpellInput.text += INPUT.process_input(event)
+
+func _process(delta):
+	spell_time -= delta
+	# Wand tip fade
+	if spell_time <= 0:
+		wand_stage = 0
+	elif spell_time < (SPELL_TIMER * .3):
+		wand_stage = 1
+	elif spell_time < (SPELL_TIMER * .6):
+		wand_stage = 2
+	elif spell_time < (SPELL_TIMER * .9):
+		wand_stage = 3
+		
+	if !$Wand.playing:
+		$Wand.set_frame(wand_stage)
 
 func _ready():
+	preload("res://Scripts/Library/input.gd")
 	$SpellInput.text = ""
+	wand_stage = 0
 	match get_tree().get_current_scene().get_name():
 		"Player":
 			# Player testing
@@ -33,36 +57,3 @@ func _ready():
 			$Avatar.play()
 		_:
 			hide()
-
-func sanitize_input(user_input : int) -> String:
-	var output_string : String = OS.get_scancode_string(user_input)
-	var upper_case : bool = false
-
-	if verbose:
-		print("Input code \"%d\": %s" % [user_input, output_string])
-
-	# Handle special characters
-	if "+" in output_string:
-		output_string = output_string.replace("+", "")
-	if "Comma" in output_string:
-		output_string = ","
-	if "Period" in output_string:
-		output_string = "."
-	if "Shift" in output_string:
-		upper_case = true
-		output_string = output_string.replace("Shift", "")
-	if "Space" in output_string:
-		output_string = " "
-	if "Tab" in output_string:
-		output_string = " "
-
-	if !upper_case:
-		output_string = output_string.to_lower()
-
-	if verbose:
-		print("Output string: ", output_string)
-
-	if output_string.length() > 1:
-		return ""
-	else:
-		return output_string

@@ -6,6 +6,9 @@ var targets : Array
 func _ready():
 	# Preload targets in the factory
 	targets.append(preload("res://Scenes/Targets/Chair.tscn"))
+	targets.append(preload("res://Scenes/Targets/Ghost.tscn"))
+	targets.append(preload("res://Scenes/Targets/Skeleton.tscn"))
+	targets.append(preload("res://Scenes/Targets/Specter.tscn"))
 	targets.append(preload("res://Scenes/Targets/Table.tscn"))
 	# TODO: replace dirty manual way with proper auto loader
 

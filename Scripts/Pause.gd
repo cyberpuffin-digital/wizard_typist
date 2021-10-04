@@ -29,7 +29,7 @@ func reset_timer():
 		pause_timer = 2.0
 
 func return_to_menu():
-	get_tree().change_scene("res://Scenes/Main_menu.tscn")
+	get_tree().change_scene("res://Scenes/Menus/Main_menu.tscn")
 	
 func resume_game():
 	hide()

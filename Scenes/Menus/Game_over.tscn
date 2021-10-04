@@ -1,0 +1,147 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Images/Objects/Grim/grim.png" type="Texture" id=1]
+[ext_resource path="res://Fonts/Old Englished Boots/standard.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Images/UI/background.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/Old Englished Boots/button.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Scripts/GameOver.gd" type="Script" id=5]
+
+[sub_resource type="AnimatedTexture" id=1]
+flags = 4
+frame_0/texture = ExtResource( 1 )
+
+[node name="GameOver" type="Popup"]
+visible = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+popup_exclusive = true
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = -32.0
+margin_bottom = -30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 960.0
+margin_bottom = 538.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 50
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Results" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_top = 53.0
+margin_right = 960.0
+margin_bottom = 82.0
+grow_horizontal = 2
+hint_tooltip = "Game Over"
+mouse_filter = 1
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.784314, 0.588235, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+text = "The grim reaper has decided to user your soul to patch the wall between worlds."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grim" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+margin_left = 352.0
+margin_top = 132.0
+margin_right = 608.0
+margin_bottom = 388.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 128, 128 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource( 1 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Controls" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 438.0
+margin_right = 960.0
+margin_bottom = 485.0
+custom_constants/separation = 100
+alignment = 1
+
+[node name="Restart" type="Button" parent="ScrollContainer/VBoxContainer/Controls"]
+margin_left = 162.0
+margin_right = 330.0
+margin_bottom = 47.0
+hint_tooltip = "Restart game and try again"
+focus_neighbour_left = NodePath("../Exit")
+focus_neighbour_right = NodePath("../Main_menu")
+focus_next = NodePath("../Main_menu")
+focus_previous = NodePath("../Exit")
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.784314, 0.588235, 0, 1 )
+custom_colors/font_color_hover = Color( 0.521569, 0.517647, 0.513726, 1 )
+custom_colors/font_color_pressed = Color( 0.392157, 0.196078, 0, 1 )
+text = "Restart game"
+flat = true
+
+[node name="Main_menu" type="Button" parent="ScrollContainer/VBoxContainer/Controls"]
+margin_left = 430.0
+margin_right = 566.0
+margin_bottom = 47.0
+hint_tooltip = "Return to main menu"
+focus_neighbour_left = NodePath("../Restart")
+focus_neighbour_right = NodePath("../Exit")
+focus_next = NodePath("../Exit")
+focus_previous = NodePath("../Restart")
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.784314, 0.588235, 0, 1 )
+custom_colors/font_color_hover = Color( 0.521569, 0.517647, 0.513726, 1 )
+custom_colors/font_color_pressed = Color( 0.392157, 0.196078, 0, 1 )
+text = "Main menu"
+flat = true
+
+[node name="Exit" type="Button" parent="ScrollContainer/VBoxContainer/Controls"]
+margin_left = 666.0
+margin_right = 798.0
+margin_bottom = 47.0
+hint_tooltip = "Exit to operating system"
+focus_neighbour_left = NodePath("../Main_menu")
+focus_neighbour_right = NodePath("../Restart")
+focus_next = NodePath("../Restart")
+focus_previous = NodePath("../Main_menu")
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.784314, 0.588235, 0, 1 )
+custom_colors/font_color_hover = Color( 0.521569, 0.517647, 0.513726, 1 )
+custom_colors/font_color_pressed = Color( 0.392157, 0.196078, 0, 1 )
+text = "Exit game"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

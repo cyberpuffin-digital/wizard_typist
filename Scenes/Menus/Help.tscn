@@ -1,0 +1,149 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fonts/Old Englished Boots/standard.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Images/UI/background.png" type="Texture" id=2]
+[ext_resource path="res://Fonts/Old Englished Boots/title.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scripts/Help.gd" type="Script" id=4]
+[ext_resource path="res://Fonts/Old Englished Boots/button.tres" type="DynamicFont" id=5]
+
+[node name="Help" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = 50.0
+margin_right = -100.0
+margin_bottom = -39.0
+custom_constants/separation = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Welcome" type="Label" parent="VBoxContainer"]
+margin_left = 115.0
+margin_right = 708.0
+margin_bottom = 75.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.784314, 0.588235, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.117647, 0, 0.352941, 1 )
+text = "Welcome to Wizard Typist"
+align = 1
+
+[node name="Intro" type="Label" parent="VBoxContainer"]
+margin_top = 100.0
+margin_right = 824.0
+margin_bottom = 353.0
+custom_fonts/font = ExtResource( 1 )
+text = "The wizard has upset the natural order by trying to revive an old friend from the land of the dead and the Grim Reaper has taken notice.
+
+You have been tasked with restoring the preternatural border.  Poltergeists, ghosts, ghouls, and all manner of creatures are sneaking through the barrier.
+
+Send these creatures back to the land of the dead before Death decides to fix the issue directly with your soul."
+autowrap = true
+
+[node name="Explanation" type="Label" parent="VBoxContainer"]
+margin_top = 378.0
+margin_right = 824.0
+margin_bottom = 439.0
+custom_fonts/font = ExtResource( 1 )
+text = "Type your spell on the keyboard and hit Enter to cast.  Mind your accuracy or your spell may fizzle."
+autowrap = true
+
+[node name="Close" type="Button" parent="VBoxContainer"]
+margin_left = 749.0
+margin_top = 464.0
+margin_right = 824.0
+margin_bottom = 511.0
+size_flags_horizontal = 8
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.784314, 0.588235, 0, 1 )
+custom_colors/font_color_hover = Color( 0.521569, 0.517647, 0.513726, 1 )
+custom_colors/font_color_pressed = Color( 0.392157, 0.196078, 0, 1 )
+text = "Close"
+flat = true
+
+[node name="HelpScroll" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = -32.0
+margin_bottom = -32.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HelpScroll"]
+margin_right = 960.0
+margin_bottom = 536.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Welcome" type="Label" parent="HelpScroll/VBoxContainer"]
+margin_left = 183.0
+margin_right = 776.0
+margin_bottom = 75.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.784314, 0.588235, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.117647, 0, 0.352941, 1 )
+text = "Welcome to Wizard Typist"
+align = 1
+
+[node name="Intro" type="Label" parent="HelpScroll/VBoxContainer"]
+margin_top = 100.0
+margin_right = 960.0
+margin_bottom = 353.0
+custom_fonts/font = ExtResource( 1 )
+text = "The wizard has upset the natural order by trying to revive an old friend from the land of the dead and the Grim Reaper has taken notice.
+
+You have been tasked with restoring the preternatural border.  Poltergeists, ghosts, ghouls, and all manner of creatures are sneaking through the barrier.
+
+Send these creatures back to the land of the dead before Death decides to fix the issue directly with your soul."
+autowrap = true
+
+[node name="Explanation" type="Label" parent="HelpScroll/VBoxContainer"]
+margin_top = 378.0
+margin_right = 960.0
+margin_bottom = 439.0
+custom_fonts/font = ExtResource( 1 )
+text = "Type your spell on the keyboard and hit Enter to cast.  Mind your accuracy or your spell may fizzle."
+autowrap = true
+
+[node name="Close" type="Button" parent="HelpScroll/VBoxContainer"]
+margin_left = 885.0
+margin_top = 464.0
+margin_right = 960.0
+margin_bottom = 511.0
+size_flags_horizontal = 8
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.784314, 0.588235, 0, 1 )
+custom_colors/font_color_hover = Color( 0.521569, 0.517647, 0.513726, 1 )
+custom_colors/font_color_pressed = Color( 0.392157, 0.196078, 0, 1 )
+text = "Close"
+flat = true

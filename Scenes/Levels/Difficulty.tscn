@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Images/Objects/Grim/grim.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Difficulty.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/Old Englished Boots/standard.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Images/UI/background.png" type="Texture" id=4]
+
+[node name="Difficulty" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Graphic" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+margin_top = 50.0
+margin_bottom = 335.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="grim" type="TextureRect" parent="Graphic"]
+margin_left = 384.0
+margin_top = 14.0
+margin_right = 640.0
+margin_bottom = 270.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 1 )
+stretch_mode = 5
+
+[node name="Text" type="VBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = -266.0
+margin_right = -100.0
+margin_bottom = -20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="paragraph" type="Label" parent="Text"]
+margin_right = 824.0
+margin_bottom = 189.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.784314, 0.588235, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+text = "Foolish mortal!
+
+Your interference in the natural order of life has caused the wall between worlds to destabilize.
+
+You must fix the damage you caused or I will fix it ... with your soul."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

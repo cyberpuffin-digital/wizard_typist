@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/ObjectFactory.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Config.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Menus/Pause_menu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/UI/HUD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Menus/Game_over.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=9]
+
+[node name="Game" type="Control" groups=[
+"controller",
+]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Config" parent="." instance=ExtResource( 4 )]
+
+[node name="PauseMenu" parent="." instance=ExtResource( 6 )]
+
+[node name="GameOver" parent="." instance=ExtResource( 8 )]
+pause_mode = 2
+visible = false
+
+[node name="Player" parent="." groups=[
+"player",
+] instance=ExtResource( 9 )]
+position = Vector2( 100, 200 )
+
+[node name="HUD" parent="." instance=ExtResource( 7 )]
+
+[node name="FactoryContainer" type="Control" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 100.0
+margin_top = 200.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ObjectFactory" type="Node2D" parent="FactoryContainer"]
+position = Vector2( 1100, 200 )
+script = ExtResource( 3 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -246.0
+margin_bottom = 4.0
+mouse_filter = 2
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 1024.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="test" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 14.0
+text = "Spell Log"
+
+[node name="DeathClock" type="Timer" parent="."]

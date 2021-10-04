@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Fonts/Old Englished Boots/button.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Fonts/Old Englished Boots/condenced.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Fonts/Old Englished Boots/title.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Scripts/Main_menu.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Config.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Images/UI/help_button_pressed.png" type="Texture" id=6]
+[ext_resource path="res://Images/UI/help_button.png" type="Texture" id=7]
+[ext_resource path="res://Images/UI/help_button_hover.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Menus/Help.tscn" type="PackedScene" id=9]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -13,6 +17,8 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Config" parent="." instance=ExtResource( 5 )]
 
 [node name="Options" type="WindowDialog" parent="."]
 anchor_left = 0.5
@@ -135,10 +141,11 @@ margin_left = 438.0
 margin_top = 75.0
 margin_right = 585.0
 margin_bottom = 122.0
-focus_neighbour_top = NodePath("../Start")
-focus_neighbour_bottom = NodePath("../Exit")
-focus_next = NodePath("../Exit")
-focus_previous = NodePath("../Start")
+focus_neighbour_top = NodePath("../../HelpButton")
+focus_neighbour_right = NodePath("../../HelpButton")
+focus_neighbour_bottom = NodePath("../Options")
+focus_next = NodePath("../Options")
+focus_previous = NodePath("../Exit")
 size_flags_horizontal = 4
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 1 )
@@ -154,6 +161,7 @@ margin_top = 126.0
 margin_right = 561.0
 margin_bottom = 173.0
 focus_neighbour_top = NodePath("../Start")
+focus_neighbour_right = NodePath("../../HelpButton")
 focus_neighbour_bottom = NodePath("../Exit")
 focus_next = NodePath("../Exit")
 focus_previous = NodePath("../Start")
@@ -172,8 +180,9 @@ margin_top = 177.0
 margin_right = 580.0
 margin_bottom = 224.0
 focus_neighbour_top = NodePath("../Options")
-focus_neighbour_bottom = NodePath("../Start")
-focus_next = NodePath("../Start")
+focus_neighbour_right = NodePath("../../HelpButton")
+focus_neighbour_bottom = NodePath("../../HelpButton")
+focus_next = NodePath("../../HelpButton")
 focus_previous = NodePath("../Options")
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -184,4 +193,32 @@ custom_colors/font_color_pressed = Color( 0.392157, 0.196078, 0, 1 )
 text = "Exit Game"
 flat = true
 
-[node name="Config" parent="." instance=ExtResource( 5 )]
+[node name="HelpButton" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbour_left = NodePath("../Buttons/Start")
+focus_neighbour_top = NodePath("../Buttons/Start")
+focus_neighbour_bottom = NodePath("../Buttons/Exit")
+focus_next = NodePath("../Buttons/Start")
+focus_previous = NodePath("../Buttons/Exit")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Help" parent="." instance=ExtResource( 9 )]
+visible = false
+margin_left = 25.0
+margin_top = 15.0
+margin_right = -25.0
+margin_bottom = -25.0

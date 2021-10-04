@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/MenuButton.gd" type="Script" id=1]
-[ext_resource path="res://Images/Objects/Wand/wand_animation.tres" type="SpriteFrames" id=2]
-[ext_resource path="res://Fonts/Old Englished Boots/button.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Fonts/Old Englished Boots/button.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Images/Objects/Wand/wand_animation.tres" type="SpriteFrames" id=3]
 
 [node name="TextureButton" type="TextureButton"]
 margin_right = 20.0
@@ -24,7 +24,7 @@ text = "Test Text"
 margin_right = 72.0
 margin_bottom = 14.0
 size_flags_horizontal = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 2 )
 text = "Button text"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -34,10 +34,10 @@ __meta__ = {
 position = Vector2( -30, 15 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
-frames = ExtResource( 2 )
+frames = ExtResource( 3 )
 
 [node name="right_arrow" type="AnimatedSprite" parent="."]
 position = Vector2( 200, 15 )
 rotation = 4.71239
 scale = Vector2( 0.5, 0.5 )
-frames = ExtResource( 2 )
+frames = ExtResource( 3 )

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Images/Targets/Skeleton_spriteframe.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Scripts/Targets.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/Old Englished Boots/standard.tres" type="DynamicFont" id=3]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 49.7344, 60.9945 )
+
+[node name="Skeleton" type="KinematicBody2D" groups=[
+"target",
+]]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -4.03406, 2.22725 )
+shape = SubResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_top = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.784314, 0.588235, 0, 1 )
+text = "Skeleton"
+__meta__ = {
+"_edit_use_anchors_": false
+}
